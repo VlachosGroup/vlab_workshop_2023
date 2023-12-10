@@ -16,5 +16,5 @@ The source-code and documentation for the tools presented in this workshop is av
 **Required Software:** Any Operating System (Windows/Mac/Linux) which can run Python Jupyter notebooks and Docker for running OpenMKM. If Docker is unavailable, OpenMKM can be compiled from source but is not recommended for beginners.
 
 ## Schedule of Events
-.. image:: https://raw.githubusercontent.com/VlachosGroup/vlab_workshop_2023/images/schedule.png
+.. image:: images/schedule.png
    :align: center
