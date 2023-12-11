@@ -23,7 +23,7 @@ from pmutt.io.omkm import write_thermo_yaml, write_yaml
 
 
 """ File locations """
-file_path = 'C:/Users/gerhard/Documents/VLabWorkshop/pmutt_to_omkm'
+file_path = './'
 input_filename = 'inputs/NH3_Input_Data.xlsx'
 input_path = os.path.join(file_path, input_filename)
 output_filename = 'outputs/thermo.yaml'
