@@ -1,8 +1,8 @@
 We will use Google Colab for this demo.
 
-Head to https://colab.google/ and sign in using your preferred Google account. 
+Head to `https://colab.google/` and sign in using your preferred Google account. 
 
-Import the notebook from this GitHub link https://github.com/VlachosGroup/nextorch/blob/main/examples/notebooks/01_simple_1d.ipynb. 
+Import the notebook from this GitHub link `https://github.com/VlachosGroup/nextorch/blob/main/examples/notebooks/01_simple_1d.ipynb`. 
 
 
 Create a new code cell on the top and key in `! pip install nextorch`. Click run, you should see a downloading message ("Downloading nextorch-0.4.0. tar.gz") 
