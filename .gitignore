@@ -1,2 +1,4 @@
 *.ppt*
-*.pptx
+*.pptx*
+.DS_Store
+.ipynb_checkpoints
