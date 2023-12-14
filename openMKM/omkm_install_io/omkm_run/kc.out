@@ -1,0 +1,16 @@
+#Equilibrium constants of reactions
+
+2.753144e+02    H2 + 2 RU(T) <=> 2 H(T) + 2 RU(B)
+1.092056e-02    N2 + RU(T) <=> N2(T) + RU(B)
+7.420067e-03    NH3 + RU(T) <=> NH3(T) + RU(B)
+5.963262e+00    NH3(T) + RU(T) <=> H(T) + NH2(T) + RU(B)
+1.493486e+04    NH2(T) + RU(T) <=> H(T) + NH(T) + RU(B)
+9.319376e+01    NH(T) + RU(T) <=> H(T) + N(T) + RU(B)
+8.648099e+06    N2(T) + RU(T) <=> 2 N(T) + RU(B)
+2.753144e+02    H2 + 2 RU(S) <=> 2 H(S) + 2 RU(B)
+2.288267e-03    N2 + RU(S) <=> N2(S) + RU(B)
+1.727238e-01    NH3 + RU(S) <=> NH3(S) + RU(B)
+5.504394e+02    NH3(S) + RU(S) <=> H(S) + NH2(S) + RU(B)
+2.305849e+00    NH2(S) + RU(S) <=> H(S) + NH(S) + RU(B)
+4.030005e-03    H(S) + N(S) + RU(B) <=> NH(S) + RU(S)
+3.220132e+07    N2(S) + RU(S) <=> 2 N(S) + RU(B)

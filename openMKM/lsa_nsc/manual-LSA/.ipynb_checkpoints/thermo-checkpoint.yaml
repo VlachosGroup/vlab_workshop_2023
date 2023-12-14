@@ -1,0 +1,402 @@
+phases:
+
+- name: gas
+  elements: [H, C, O, N, Pt]
+  species: [CH2CH2, CH3CH3, CH4, CHCH, H2, N2]
+  thermo: ideal-gas
+  reactions: none 
+  kinetics: gas
+
+- name: bulk
+  elements: [Pt]
+  species: [PT(B)]
+  thermo: ref-state-fixed-stoichiometry
+
+- name: terrace
+  elements: [H, C, O, N, Pt]
+  species: [CH2CH3(S), CH3(S), H(S), CH2(S), CHCH3(S), CH2CH2(S), CH(S), CCH3(S),
+    CHCH2(S), C(S), CCH2(S), CHCH(S), CCH(S), CC(S), CH4(S), PT(S)]
+  thermo: surface-lateral-interaction
+  adjacent-phases: [gas, bulk]
+  site-density: "2.485e-09 mol/cm^2"
+  kinetics: surface
+  reactions: all
+
+species:
+- name: CH2CH2
+  composition: {C: 2.0, H: 4.0}
+  note: '20180216'
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 700.0, 1500.0]
+    data:
+    - [2.007959, 6.34507e-03, 2.372066e-05, -3.741865e-08, 1.713816e-11, 5285.668,
+      12.2773]
+    - [-1.714629, 0.02746817, -2.326748e-05, 1.09301e-08, -2.127992e-12, 5834.109,
+      29.01878]
+
+- name: CH3CH3
+  composition: {C: 2.0, H: 6.0}
+  note: '20180216'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 600.0, 1700.0]
+    data:
+    - [5.687837, -0.02105701, 1.209877e-04, -1.704135e-07, 8.432696e-11, -1.161639e+04,
+      -2.925983]
+    - [-0.1179667, 0.02441103, -1.221218e-05, 2.921645e-09, -2.633766e-13, -1.102727e+04,
+      21.16908]
+
+- name: CH4
+  composition: {C: 1.0, H: 4.0}
+  note: '20180216'
+  thermo:
+    model: NASA7
+    temperature-ranges: [300.0, 500.0, 1500.0]
+    data:
+    - [8.167462, -0.04340863, 1.565496e-04, -2.17062e-07, 1.137175e-10, -1.05186e+04,
+      -16.45645]
+    - [1.923256, 6.477388e-03, 3.691325e-06, -4.728679e-09, 1.27277e-12, -9878.082,
+      9.422848]
+
+- name: CHCH
+  composition: {C: 2.0, H: 2.0}
+  note: '20180216'
+  thermo:
+    model: NASA7
+    temperature-ranges: [298.15, 600.0, 1500.0]
+    data:
+    - [-1.822474, 0.04657433, -1.095117e-04, 1.302547e-07, -6.038627e-11, 2.648013e+04,
+      24.53934]
+    - [2.867774, 0.01163393, -1.114154e-05, 6.261766e-09, -1.415648e-12, 2.597286e+04,
+      4.810602]
+
+- name: H2
+  composition: {H: 2.0}
+  note: '20180216'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 600.0, 1500.0]
+    data:
+    - [2.35962, 8.669434e-03, -2.452869e-05, 3.092782e-08, -1.454207e-11, -926.3951,
+      0.5339751]
+    - [3.660716, -5.094913e-04, 4.129702e-07, 1.712035e-10, -1.025803e-13, -1078.695,
+      -5.024551]
+
+- name: N2
+  composition: {N: 2.0}
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 1476.5, 5000.0]
+    data:
+    - [3.54136017, -6.93374234e-04, 2.10102428e-06, -1.28972949e-09, 2.58598645e-13,
+      -1041.1782, 2.99222674]
+    - [2.83317744, 1.60016503e-03, -6.09980897e-07, 1.06349431e-10, -6.90914308e-15,
+      -872.927385, 6.54633959]
+  sites: 1.0
+- name: CH2CH3(S)
+  composition: {C: 2.0, H: 5.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [1.509545, 0.02370879, -4.206735e-05, 1.142839e-07, -1.090274e-10, -8064.211,
+      -5.7053]
+    - [-0.2258286, 0.03004395, -2.20213e-05, 9.023088e-09, -1.605355e-12, -7850.36,
+      2.113424]
+  sites: 1.0
+
+- name: CH3(S)
+  composition: {C: 1.0, H: 3.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [2.187186, 1.680177e-03, 3.892003e-05, -7.382379e-08, 4.376563e-11, -5559.465,
+      -7.855966]
+    - [1.194708, 0.01423652, -1.01063e-05, 4.219376e-09, -7.864777e-13, -5530.979,
+      -4.393658]
+  sites: 1.0
+
+- name: H(S)
+  composition: {H: 1.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [0.4674423, -0.01236145, 9.704183e-05, -2.043171e-07, 1.444866e-10, -6129.081,
+      -1.335558]
+    - [-0.9086012, 0.01025622, -1.141342e-05, 5.977537e-09, -1.206452e-12, -6124.573,
+      2.978258]
+- name: CH2(S)
+  composition: {C: 1.0, H: 2.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [0.09544894, 8.266314e-04, 8.383573e-05, -2.106852e-07, 1.601288e-10, 103.0677,
+      -0.4478997]
+    - [0.6264019, 0.01397214, -1.272516e-05, 6.313806e-09, -1.284905e-12, -164.0006,
+      -4.769744]
+  sites: 1.0
+
+- name: CHCH3(S)
+  composition: {C: 2.0, H: 4.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-0.4113585, 0.03743024, -8.919294e-05, 1.768932e-07, -1.403783e-10, -3705.29,
+      0.05363592]
+    - [0.09025253, 0.02708504, -2.138174e-05, 9.311559e-09, -1.723912e-12, -3736.539,
+      -1.551386]
+- name: CH2CH2(S)
+  composition: {C: 2.0, H: 4.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [1.096493, 6.925538e-03, 6.159403e-05, -1.170425e-07, 6.337176e-11, -6381.594,
+      -4.533019]
+    - [-0.8149834, 0.03067157, -2.657674e-05, 1.251334e-08, -2.441502e-12, -6333.305,
+      2.124563]
+  sites: 1.0
+
+- name: CH(S)
+  composition: {C: 1.0, H: 1.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-0.06513198, -8.371021e-03, 1.302545e-04, -3.1681e-07, 2.427516e-10, -2777.849,
+      0.5930793]
+    - [0.3744729, 0.01175451, -1.244203e-05, 6.633967e-09, -1.388031e-12, -3095.592,
+      -4.026741]
+- name: CCH3(S)
+  composition: {C: 2.0, H: 3.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-0.9859575, 0.0405364, -1.04683e-04, 1.887246e-07, -1.372248e-10, -8923.267,
+      2.080105]
+    - [0.4644927, 0.02270053, -1.847712e-05, 8.206552e-09, -1.532704e-12, -9038.404,
+      -3.390287]
+
+- name: CHCH2(S)
+  composition: {C: 2.0, H: 3.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-0.7620181, 0.01435291, 5.888303e-05, -1.595238e-07, 1.147657e-10, -1097.55,
+      2.234118]
+    - [-0.3870203, 0.0275172, -2.572815e-05, 1.26938e-08, -2.539153e-12, -1362.864,
+      -1.444942]
+  sites: 1.0
+
+- name: C(S)
+  composition: {C: 1.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-0.1993275, -2.823787e-03, 7.410448e-05, -1.915362e-07, 1.511463e-10, 7854.423,
+      0.8954592]
+    - [0.3027595, 7.57059e-03, -8.80953e-06, 4.762805e-09, -9.840407e-13, 7642.476,
+      -2.859839]
+  sites: 1.0
+
+- name: CCH2(S)
+  composition: {C: 2.0, H: 2.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-1.611502, 0.02796421, -1.780694e-05, -1.977736e-08, 2.588635e-11, 159.3056,
+      5.047071]
+    - [0.2522989, 0.02156932, -2.043579e-05, 1.009863e-08, -2.011886e-12, -156.1459,
+      -3.818589]
+  sites: 1.0
+
+- name: CHCH(S)
+  composition: {C: 2.0, H: 2.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-1.292304, 0.02182556, 1.173726e-05, -7.09532e-08, 5.612058e-11, 2957.913,
+      4.016718]
+    - [0.02858754, 0.02319838, -2.299849e-05, 1.170765e-08, -2.374937e-12, 2647.209,
+      -3.066757]
+  sites: 1.0
+
+- name: CCH(S)
+  composition: {C: 2.0, H: 1.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-1.120939, 0.02914219, -2.653472e-05, -2.753142e-08, 4.705642e-11, 1.72761e+04,
+      3.943562]
+    - [2.135943, 0.01365195, -1.374848e-05, 7.046227e-09, -1.432055e-12, 1.681396e+04,
+      -10.83295]
+  sites: 1.0
+
+- name: CC(S)
+  composition: {C: 2.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [-2.924487, 0.04950572, -1.360988e-04, 1.88522e-07, -1.037266e-10, 2.85293e+04,
+      9.353349]
+    - [1.875781, 0.01028997, -1.110441e-05, 5.69775e-09, -1.13385e-12, 2.803846e+04,
+      -10.48019]
+  sites: 1.0
+
+- name: CH4(S)
+  composition: {C: 1.0, H: 4.0}
+  note: '20181018'
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [5.326382, 8.630948e-03, -5.28137e-05, 1.566818e-07, -1.344879e-10, -1.035587e+04,
+      -15.65319]
+    - [3.473184, 8.92472e-03, -5.019543e-07, -1.807339e-09, 5.442894e-13, -1.001321e+04,
+      -6.32831]
+  sites: 1.0
+
+- name: PT(S)
+  composition: {Pt: 1.0}
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  sites: 1.0
+
+- name: PT(B)
+  composition: {Pt: 1.0}
+  thermo:
+    model: NASA7
+    temperature-ranges: [100.0, 500.0, 1500.0]
+    data:
+    - [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  sites: 1.0
+  
+reactions:
+- equation: CH3CH3 + 2 PT(S) <=> CH2CH3(S) + H(S) + 2 PT(B)
+  Motz-Wise: false
+  sticking-coefficient: {A: 0.5, b: 0.0, Ea: 12.39 kcal/mol}
+  sticking-species: CH3CH3
+  id: r_0001
+- equation: CH2CH2 + PT(S) <=> CH2CH2(S) + PT(B)
+  Motz-Wise: false
+  sticking-coefficient: {A: 0.5, b: 0.0, Ea: 0.0 kcal/mol}
+  sticking-species: CH2CH2
+  id: r_0002
+- equation: CHCH + PT(S) <=> CHCH(S) + PT(B)
+  Motz-Wise: false
+  sticking-coefficient: {A: 0.5, b: 0.0, Ea: 0.0 kcal/mol}
+  sticking-species: CHCH
+  id: r_0003
+- equation: CH4 + PT(S) <=> CH4(S) + PT(B)
+  Motz-Wise: false
+  sticking-coefficient: {A: 0.5, b: 0.0, Ea: 0.0 kcal/mol}
+  sticking-species: CH4
+  id: r_0004
+- equation: H2 + 2 PT(S) <=> 2 H(S) + 2 PT(B)
+  Motz-Wise: false
+  sticking-coefficient: {A: 0.5, b: 0.0, Ea: 0.0 kcal/mol}
+  sticking-species: H2
+  id: r_0005
+- equation: CC(S) + PT(S) <=> 2 C(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 15.34 kcal/mol}
+  id: r_0006
+- equation: CCH(S) + PT(S) <=> C(S) + CH(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 15.97 kcal/mol}
+  id: r_0007
+- equation: CCH(S) + PT(S) <=> CC(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 35.27 kcal/mol}
+  id: r_0008
+- equation: CCH2(S) + PT(S) <=> C(S) + CH2(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 42.98 kcal/mol}
+  id: r_0009
+- equation: CCH2(S) + PT(S) <=> CCH(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 48.56 kcal/mol}
+  id: r_0010
+- equation: CCH3(S) + PT(S) <=> C(S) + CH3(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 47.72 kcal/mol}
+  id: r_0011
+- equation: CCH3(S) + PT(S) <=> CCH2(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 31.05 kcal/mol}
+  id: r_0012
+- equation: CH(S) + PT(S) <=> C(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 34.29 kcal/mol}
+  id: r_0013
+- equation: CH2(S) + PT(S) <=> CH(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 6.82 kcal/mol}
+  id: r_0014
+- equation: CH2CH2(S) + PT(S) <=> 2 CH2(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 41.58 kcal/mol}
+  id: r_0015
+- equation: CH2CH2(S) + PT(S) <=> CHCH2(S) + H(S) + PT(B)
+  rate-constant: {A: 1.8e+17, b: 1.0, Ea: 14.68 kcal/mol}
+  id: r_0016
+- equation: CH2CH3(S) + PT(S) <=> CH2(S) + CH3(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 36.62 kcal/mol}
+  id: r_0017
+- equation: CH2CH3(S) + PT(S) <=> CH2CH2(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 16.05 kcal/mol}
+  id: r_0018
+- equation: CH2CH3(S) + PT(S) <=> CHCH3(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 21.68 kcal/mol}
+  id: r_0019
+- equation: CH4(S) + PT(S) <=> CH3(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 21.06 kcal/mol}
+  id: r_0020
+- equation: CH3(S) + PT(S) <=> CH2(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 23.726 kcal/mol}
+  id: r_0021
+- equation: CHCH(S) + PT(S) <=> CCH(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 42.77 kcal/mol}
+  id: r_0022
+- equation: CHCH(S) + PT(S) <=> 2 CH(S) + PT(B)
+  rate-constant: {A: 3.41e+18, b: 1.0, Ea: 28.88 kcal/mol}
+  id: r_0023
+- equation: CHCH2(S) + PT(S) <=> CCH2(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 15.43 kcal/mol}
+  id: r_0024
+- equation: CHCH2(S) + PT(S) <=> CH(S) + CH2(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 30.77 kcal/mol}
+  id: r_0025
+- equation: CHCH2(S) + PT(S) <=> CHCH(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 21.22 kcal/mol}
+  id: r_0026
+- equation: CHCH3(S) + PT(S) <=> CCH3(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 2.27 kcal/mol}
+  id: r_0027
+- equation: CHCH3(S) + PT(S) <=> CH(S) + CH3(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 27.0 kcal/mol}
+  id: r_0028
+- equation: CHCH3(S) + PT(S) <=> CHCH2(S) + H(S) + PT(B)
+  rate-constant: {A: 8.37e+17, b: 1.0, Ea: 17.896 kcal/mol}
+  id: r_0029

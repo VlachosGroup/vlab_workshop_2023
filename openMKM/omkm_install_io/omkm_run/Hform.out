@@ -1,0 +1,20 @@
+#Dimensionless formation enthalpies of species (H/RT) at Reference Pressure of 1 bar
+
+N2               3.41282
+NH3             -4.88596
+H2               5.39651
+RU(B)                  0
+N2(T)              -3.07
+N(T)            -8.04569
+H(T)            -5.35271
+NH3(T)          -10.0866
+NH2(T)          -8.85064
+NH(T)           -13.3299
+RU(T)                  0
+N2(S)           -5.74699
+N(S)            -11.8527
+H(S)            -5.35271
+NH3(S)          -13.3147
+NH2(S)          -16.0543
+NH(S)           -12.0726
+RU(S)                  0

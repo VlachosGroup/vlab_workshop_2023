@@ -1,0 +1,14 @@
+-----------------------------------------------------------
+OpenMKM: version 0.6.1
+-----------------------------------------------------------
+
+OpenMKM is a multiphysics, multiscale, and open source software 
+aimed at modelng chemical kinetics. It can run pure gas phase 
+as well as surface mechanisms for heterogeneous catalysis.
+OpenMKM is developed at Delaware Energy Institute, University
+of Delaware. The development of OpenMKM is funded by RAPID.
+
+
+Reactor density 0.115306
+Reactor temperature mode: isothermal
+Program ran for 214 milliseconds

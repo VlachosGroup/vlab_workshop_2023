@@ -1,0 +1,16 @@
+#Dimensionless enthalpies of reactions (H/RT) at Reference Pressure 1bar
+
+-1.610194e+01   H2 + 2 RU(T) <=> 2 H(T) + 2 RU(B)
+-6.482817e+00   N2 + RU(T) <=> N2(T) + RU(B)
+-5.200644e+00   NH3 + RU(T) <=> NH3(T) + RU(B)
+-4.116754e+00   NH3(T) + RU(T) <=> H(T) + NH2(T) + RU(B)
+-9.831940e+00   NH2(T) + RU(T) <=> H(T) + NH(T) + RU(B)
+-6.853499e-02   NH(T) + RU(T) <=> H(T) + N(T) + RU(B)
+-1.302138e+01   N2(T) + RU(T) <=> 2 N(T) + RU(B)
+-1.610194e+01   H2 + 2 RU(S) <=> 2 H(S) + 2 RU(B)
+-9.159804e+00   N2 + RU(S) <=> N2(S) + RU(B)
+-8.428779e+00   NH3 + RU(S) <=> NH3(S) + RU(B)
+-8.092232e+00   NH3(S) + RU(S) <=> H(S) + NH2(S) + RU(B)
+-1.371081e+00   NH2(S) + RU(S) <=> H(S) + NH(S) + RU(B)
+5.132801e+00    H(S) + N(S) + RU(B) <=> NH(S) + RU(S)
+-1.795843e+01   N2(S) + RU(S) <=> 2 N(S) + RU(B)
