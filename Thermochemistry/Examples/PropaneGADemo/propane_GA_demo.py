@@ -6,10 +6,11 @@ Created on Tue Oct 31 11:43:26 2023
 """
 
 import numpy as np
+from matplotlib import pyplot as plt
 import os
 
 from pmutt.empirical.nasa import Nasa
-from pmutt.io.thermdat import write_thermdat
+from pmutt.io.thermdat import write_thermdat, read_thermdat
 from pmutt import parse_formula
 from pmutt import constants as c
 
@@ -151,6 +152,7 @@ T_mid = np.ndarray.tolist(np.linspace(400, 800, 33))
 
 T_ref = c.T0('K')
 species = []
+species2 = []
 
 for smile, name in zip(smiles, names):
     descriptors = lib.GetDescriptors(smile)
@@ -160,14 +162,34 @@ for smile, name in zip(smiles, names):
     SoR_ref = thermochem.get_SoR(T=T_ref)
     phase = 'S'
     elements = parse_formula(name[:name.find('S')])
+    """ Generate NASA polynomial from data """
     species.append(Nasa.from_data(name=name, T=T, CpoR=CpoR,
                                   HoRT_ref=HoRT_ref, SoR_ref=SoR_ref,
                                   T_ref=T_ref, T_mid=T_mid,
                                   elements=elements, phase=phase,
                                   smiles=smile))
+    """ Generate NASA polynomial from model """
+    species2.append(Nasa.from_model(model=thermochem, name=name, T_low=min(T),
+                                    T_high=max(T), elements=elements,
+                                    phase=phase))
 
 base_path = './'
 filename = 'thermdat_demo'
 filepath = os.path.join(base_path, filename)
 write_thermdat(filename=filepath, nasa_species=species, write_date=True)
+filename = 'thermdat_demo2'
+filepath = os.path.join(base_path, filename)
+write_thermdat(filename=filepath, nasa_species=species2, write_date=True)
 print(write_thermdat(nasa_species=species, write_date=True))
+
+therm1 = read_thermdat('thermdat_demo', 'dict')
+therm2 = read_thermdat('thermdat_demo2', 'dict')
+plt_species = 'CCHCHOH(S)'
+plt.plot(T, therm1[plt_species].get_H(T=T, units='kcal/mol'))
+plt.plot(T[::75], therm2[plt_species].get_H(T=T[::75], units='kcal/mol'),
+         'o')
+plt.legend(['from.data', 'from_model'])
+plt.xlabel('Temperature [K]')
+plt.ylabel('Enthalpy [kcal/mol]')
+title = plt_species + ' Enthalpy' + '\n' + smiles[names.index(plt_species)]
+plt.title(title)
