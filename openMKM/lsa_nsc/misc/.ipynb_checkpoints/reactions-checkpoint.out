@@ -1,0 +1,30 @@
+Reaction ID
+01. CH3CH3 + 2 * <--> CH2CH3* + H*
+02. CH2CH2 + * <--> CH2CH2*
+03. CHCH + * <--> CHCH*
+04. CH4 + * <--> CH4*
+05. H2 + 2 * <--> 2 H*
+06. CC* + * <--> 2 C*
+07. CCH* + * <--> C* + CH*
+08. CCH* + * <--> CC* + H*
+09. CCH2* + * <--> C* + CH2*
+10. CCH2* + * <--> CCH* + H*
+11. CCH3* + * <--> C* + CH3*
+12. CCH3* + * <--> CCH2* + H*
+13. CH* + * <--> C* + H*
+14. CH2* + * <--> CH* + H*
+15. CH2CH2* + * <--> 2 CH2*
+16. CH2CH2* + * <--> CHCH2* + H*
+17. CH2CH3* + * <--> CH2* + CH3*
+18. CH2CH3* + * <--> CH2CH2* + H*
+19. CH2CH3* + * <--> CHCH3* + H*
+20. CH4* + * <--> CH3* + H*
+21. CH3* + * <--> CH2* + H*
+22. CHCH* + * <--> CCH* + H*
+23. CHCH* + * <--> 2 CH*
+24. CHCH2* + * <--> CCH2* + H*
+25. CHCH2* + * <--> CH* + CH2*
+26. CHCH2* + * <--> CHCH* + H*
+27. CHCH3* + * <--> CCH3* + H*
+28. CHCH3* + * <--> CH* + CH3*
+29. CHCH3* + * <--> CHCH2* + H*

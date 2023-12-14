@@ -1,0 +1,25 @@
+#Dimensionless formation entropies of species (S/R) at Reference Pressure of 1 bar
+
+CH2CH2           34.6358
+CH3CH3           37.6371
+CH4              28.6445
+CHCH             31.3249
+H2               19.5012
+N2               26.9209
+PT(B)                  0
+CH2CH3(S)         20.189
+CH3(S)           13.0957
+H(S)             2.58021
+CH2(S)           8.03447
+CHCH3(S)          16.372
+CH2CH2(S)         15.675
+CH(S)            5.29936
+CCH3(S)          14.1293
+CHCH2(S)         12.5991
+C(S)             3.35595
+CCH2(S)          10.8801
+CHCH(S)          10.8668
+CCH(S)           11.6654
+CC(S)            8.07312
+CH4(S)           24.4701
+PT(S)                  0
