@@ -15,5 +15,14 @@ The source-code and documentation for the tools presented in this workshop is av
 
 **Required Software:** Any Operating System (Windows/Mac/Linux) which can run Python Jupyter notebooks and Docker for running OpenMKM. If Docker is unavailable, OpenMKM can be compiled from source but is not recommended for beginners.
 
+
+## Workshop Website
+https://dei.udel.edu/vlab_workshop/ 
+
+
+## Workshop Videos
+<a href="https://capture.udel.edu/channel/Virtual%2BKinetics%2BLab%2B-%2BOnline%2BWorkshop%2B2023/332321582">VLab-Online-Workshop</a>
+
+
 ## Schedule of Events
 ![Schedule](images/schedule.png)
